@@ -3,6 +3,7 @@ services:
     image: postgres:17
     container_name: postgres
     volumes:
+      - ./db/scripts/init-scripts:/docker-entrypoint-initdb.d
       - db-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"

@@ -5,12 +5,12 @@ begin;
         provider_customer_id varchar(100) not null,
         provider_subscription_id varchar(100) not null,
         status varchar(50),
-        sarted_at timestamp,
-        current_period_start timestamp,
-        current_period_end timestamp,
-        cancelled_at timestamp,
-        created_at timestamp not null default current_timestamp,
-        updated_at timestamp,
+        sarted_at timestamptz,
+        current_period_start timestamptz,
+        current_period_end timestamptz,
+        cancelled_at timestamptz,
+        created_at timestamptz not null default current_timestamp,
+        updated_at timestamptz,
         is_active boolean default true,
 
 
@@ -20,7 +20,7 @@ begin;
         constraint tenant_subscriptions_tenant_id_fk
             foreign key (tenant_id)
             references dt.tenants(id)
-            on delete set null,
+            on delete cascade,
 
         constraint tenant_subscriptions_plan_id_fk
             foreign key (plan_id)

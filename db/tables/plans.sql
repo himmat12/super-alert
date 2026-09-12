@@ -7,8 +7,8 @@ begin;
         billing_interval text not null,
         interval_count int not null default 1,
         currency_code char(3) not null,
-        created_at timestamp not null default current_timestamp,
-        updated_at timestamp,
+        created_at timestamptz not null default current_timestamp,
+        updated_at timestamptz,
         is_active boolean not null default true,
 
         constraint pans_billing_interval_check

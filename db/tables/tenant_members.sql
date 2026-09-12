@@ -3,7 +3,7 @@ begin;
         tenant_id bigint not null,
         user_id bigint not null,
         role varchar(50),
-        created_at timestamp not null default current_timestamp,
+        created_at timestamptz not null default current_timestamp,
 
         constraint tenant_members_pk
             primary key (tenant_id, user_id),

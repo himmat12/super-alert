@@ -5,7 +5,7 @@ begin;
         platform varchar(50),
         push_token varchar(100),
         endpoint varchar(100),
-        last_seen_at timestamp,
+        last_seen_at timestamptz,
         is_active boolean default true,
 
         constraint push_devices_user_id_fk
